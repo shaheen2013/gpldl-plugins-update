@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       GPLDL Plugins Update
  * Plugin URI:
- * Description:       This Plugin is for update plugin. This plugin update only those plugins whose are downloaded from gpldl.
+ * Description:       Codibu.com - Auto plugin update / Only works with plugins in Codibu's free plugin list.
  * Version:           1.0.0
  * Author:            mediusware
  * Author URI:        https://mediusware.com/
@@ -145,7 +145,7 @@ if( !function_exists('get_plugin_data') ){
 }
 
 if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) ) {
-    wp_schedule_event( time(), 'two_minutes', 'gpldl_plugin_update_hook' );
+    wp_schedule_event( time(), 'weekly', 'gpldl_plugin_update_hook' );
 }
 
 add_action('gpldl_plugin_update_hook', 'gpldl_plugins_update_exec');
