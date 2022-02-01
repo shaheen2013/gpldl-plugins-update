@@ -61,6 +61,7 @@ function theme_options_page()
 
     <div class=wrap>
         <h1>Update Gpldl Plugins</h1>
+        <p>Codibu.com - Auto plugin update / Only works with plugins in Codibu's free plugin list</p>
         <form action="<?php echo plugin_dir_url(__FILE__) . 'plugin-update.php' ?>" method="POST" class="ajax">
             <table class="form-table" role="presentation">
                 <tbody>
