@@ -8,11 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['action']) && $_POST['action'] == 'update_gpldl_plugin_now') {
 
-        if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) ) {
+        /*if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) ) {
             wp_schedule_single_event( time(), 'gpldl_plugin_update_hook' );
-        }
-        //gpldl_plugins_update_exec();
-        return json_encode(['status' => 'OK']);
+        }*/
+        gpldl_plugins_update_exec();
+        //echo '<pre>'; print_r( _get_cron_array() ); echo '</pre>';
+        echo json_encode(['status' => 'OK']);
+        return;
     }
 
     if (isset($_POST['is_auto_update_on'])) {
@@ -25,6 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    echo '<pre>'; print_r( _get_cron_array() ); echo '</pre>';
-    return json_encode(['status' => 'OK']);
+    //echo '<pre>'; print_r( _get_cron_array() ); echo '</pre>';
+    echo json_encode(['status' => 'OK']);
 }

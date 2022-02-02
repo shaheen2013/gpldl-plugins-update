@@ -145,12 +145,11 @@ if( !function_exists('get_plugin_data') ){
     require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) ) {
+if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) && $is_auto_update_on) {
     wp_schedule_event( time(), 'weekly', 'gpldl_plugin_update_hook' );
 }
 
 add_action('gpldl_plugin_update_hook', 'gpldl_plugins_update_exec');
-
 /**
  * update all plugins from api list.
  */
