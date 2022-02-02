@@ -12,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             wp_schedule_single_event( time(), 'gpldl_plugin_update_hook' );
         }
         //gpldl_plugins_update_exec();
-        echo json_encode(['status' => 'OK']);
-        return;
+        return json_encode(['status' => 'OK']);
     }
 
     if (isset($_POST['is_auto_update_on'])) {
@@ -26,6 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    echo json_encode(['status' => 'OK']);
+    echo '<pre>'; print_r( _get_cron_array() ); echo '</pre>';
+    return json_encode(['status' => 'OK']);
 }
-echo '<pre>'; print_r( _get_cron_array() ); echo '</pre>';
