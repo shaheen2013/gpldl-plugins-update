@@ -203,9 +203,9 @@ function gpldl_plugin($name){
     return false;
 }
 
-if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) ) {
+/*if ( ! wp_next_scheduled( 'gpldl_plugin_update_hook' ) ) {
     wp_schedule_single_event( time(), 'gpldl_plugin_update_hook' );
-}
+}*/
 /**
  * @param $gpldl_plugin_path
  */
